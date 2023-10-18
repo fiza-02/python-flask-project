@@ -25,3 +25,5 @@ without restarting the web server the changes will reload automatically.
  * Debug mode: off
 An attempt was made to access a socket in a way forbidden by its access permissions
 This error occurs when port is already in use
+
+- Templating engine python uses jinja2
