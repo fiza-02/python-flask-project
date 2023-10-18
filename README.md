@@ -27,3 +27,7 @@ An attempt was made to access a socket in a way forbidden by its access permissi
 This error occurs when port is already in use
 
 - Templating engine python uses jinja2
+
+- Template Inheritance 
+ - combine the same code in html
+ - Template inheritance allows you to build a base “skeleton” template that contains all the common elements of your site and defines blocks that child templates can override.
