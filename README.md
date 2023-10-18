@@ -3,7 +3,7 @@ To run a flask application
 
 Before we run a application we need to set an environment variable to the file that need to be our flask application.
 
-windows
+windows powershell
 
 ```python
 set FLASK_APP=hello.py
