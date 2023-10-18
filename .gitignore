@@ -109,6 +109,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+flaksblog/
 
 # Spyder project settings
 .spyderproject

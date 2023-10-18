@@ -18,6 +18,15 @@ export FLASK_APP = flaskblog.py
 flask run ⇒ to run the application
 
 to track the changes run in debug mode ⇒ export FLASK_DEBUG =1
+To enable debug mode, use the --debug option.
+
+$ flask --app hello run --debug
+ * Serving Flask app 'hello'
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: nnn-nnn-nnn
 
 without restarting the web server the changes will reload automatically.
 # Error while running a flask application
@@ -25,6 +34,8 @@ without restarting the web server the changes will reload automatically.
  * Debug mode: off
 An attempt was made to access a socket in a way forbidden by its access permissions
 This error occurs when port is already in use
+to run application with change in hostname and port 
+flask run -h localhost -p 3000
 
 - Templating engine python uses jinja2
 
