@@ -1,7 +1,16 @@
 from datetime import datetime
 from flaskblog import db
+from flaskblog import login_manager
+from flask_login import UserMixin
 
-class User(db.Model):
+# Flask-Login can manage user sessions. Start by adding the UserMixin to your User model. The UserMixin will add Flask-Login attributes to the model so that Flask-Login will be able to work with it.
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
@@ -23,4 +32,3 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}',' {self.content}')"
-

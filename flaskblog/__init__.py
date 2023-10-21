@@ -1,6 +1,8 @@
 #__init__.py where we initialize our application adn bring together differnet components
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
 
 app = Flask(__name__)
 
@@ -20,5 +22,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "mssql+pyodbc://sa:Viswafiza%4002@WIN-CF
 
 db = SQLAlchemy(app)
 print('db connected')
+bcrypt = Bcrypt(app)
+login_manager= LoginManager(app)
+
+login_manager.login_view = 'login'
+login_manager.login_message_category='info'
 
 from flaskblog import routes
