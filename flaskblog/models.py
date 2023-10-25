@@ -5,6 +5,7 @@ from flask_login import UserMixin
 
 # Flask-Login can manage user sessions. Start by adding the UserMixin to your User model. The UserMixin will add Flask-Login attributes to the model so that Flask-Login will be able to work with it.
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
